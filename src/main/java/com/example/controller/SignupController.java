@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.domain.model.WUser;
-import com.example.domain.service.UserService;
+import com.example.domain.service.WorkoutService;
 import com.example.form.SignupForm;
 import com.example.service.UserApplicationService;
 
@@ -30,7 +29,7 @@ public class SignupController {
 	private UserApplicationService userApplicationService;
 	
 	@Autowired
-	private UserService userService;
+	private WorkoutService userService;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -58,10 +57,10 @@ public class SignupController {
 		log.info(form.toString());
 		
 		//formをWUserクラスに変換
-		WUser user = modelMapper.map(form,WUser.class);
+		//WUser user = modelMapper.map(form,WUser.class);
 		
 		//ユーザー登録
-		userService.signup(user);
+		//userService.addTraining(user);
 		//ログイン画面にリダイレクト
 		return "redirect:/login";
 	}

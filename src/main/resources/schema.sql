@@ -6,3 +6,8 @@ CREATE TABLE IF NOT EXISTS w_user(
 ,age INT
 ,gender INT
  );
+ 
+ 
+ CREATE TABLE IF NOT EXISTS w_entity(
+  training VARCHAR(20)
+ );

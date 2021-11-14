@@ -13,7 +13,7 @@ public class LoginController {
 		return "login/login";
 	}
 
-	@PostMapping("/login")
+	@PostMapping("/workout")
 		public String postLogin() {
 		
 			return "workout/workoutList";

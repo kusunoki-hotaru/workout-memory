@@ -8,22 +8,27 @@
  <!-- ユーザー一件登録 -->
  <insert id="insertOne">
    insert into w_user(
-    user_id
-   ,password
-   ,user_name
-   ,birthday
-   ,age
-   ,gender
+    training
    )
    
    values(
-    #{userId}
-   ,#{password}
-   ,#{userName}
-   ,#{birthday}
-   ,#{age}
-   ,#{gender}
+    #{training}
    )
    
  </insert>
+ 
+ 
+ <!-- ユーザー複数件取得 -->
+ <select id="findMany" resultType="WUser">
+   select
+     *
+   from
+     w_user
+ 
+ </select>
 </mapper>
+
+
+
+
+
