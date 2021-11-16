@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.service.WorkoutService;
 import com.example.form.SignupForm;
-import com.example.service.UserApplicationService;
+import com.example.service2.UserApplicationService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -57,7 +57,7 @@ public class SignupController {
 		log.info(form.toString());
 		
 		//formをWUserクラスに変換
-		//WUser user = modelMapper.map(form,WUser.class);
+        //WUser user = modelMapper.map(form,WUser.class);
 		
 		//ユーザー登録
 		//userService.addTraining(user);

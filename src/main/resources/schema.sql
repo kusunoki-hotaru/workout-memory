@@ -9,5 +9,6 @@ CREATE TABLE IF NOT EXISTS w_user(
  
  
  CREATE TABLE IF NOT EXISTS w_entity(
-  training VARCHAR(20)
+  training VARCHAR(20) PRIMARY KEY
+ ,body_parts VARCHAR(20)
  );

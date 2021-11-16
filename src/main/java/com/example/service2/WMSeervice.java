@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.service2;
 
 public class WMSeervice {
 

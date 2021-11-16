@@ -11,7 +11,8 @@ INSERT INTO w_user(
 
 INSERT INTO w_entity(
  training
+,body_parts
 )VALUES
-('ベンチプレス'),
-('スクワット'),
-('チンニング');
+('ベンチプレス','胸'),
+('スクワット','足'),
+('チンニング','背中');

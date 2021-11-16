@@ -3,27 +3,29 @@
           "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
          
 <!-- Mapperとxmlのマッピンング -->
-<mapper namespace="com.example.repository.UserMapper">
+<mapper namespace="com.example.repository.WorkoutMapper">
 
  <!-- ユーザー一件登録 -->
  <insert id="insertOne">
-   insert into w_user(
+   insert into w_entity(
     training
+   ,body_parts
    )
    
    values(
     #{training}
+   ,#{bodyParts}
    )
    
  </insert>
  
  
  <!-- ユーザー複数件取得 -->
- <select id="findMany" resultType="WUser">
+ <select id="findMany" resultType="WEntity">
    select
      *
    from
-     w_user
+     w_entity
  
  </select>
 </mapper>

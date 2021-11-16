@@ -9,4 +9,7 @@ public class WorkoutForm {
 
 	@NotBlank
 	private String training;
+	
+	@NotBlank
+	private String bodyParts;
 }

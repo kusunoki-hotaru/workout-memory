@@ -6,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.domain.model.WEntity;
-import com.example.domain.model.WUser;
 import com.example.domain.service.WorkoutService;
-import com.example.repository.UserMapper;
+import com.example.repository.WorkoutMapper;
 
 @Service
 public class WorkoutServiceImpl implements WorkoutService{
 
 	@Autowired
-	private UserMapper mapper;
+	private WorkoutMapper mapper;
 	
 	/** ユーザー登録*/
 	@Override
@@ -25,7 +24,7 @@ public class WorkoutServiceImpl implements WorkoutService{
 	
 	/**ユーザー取得*/
 	@Override
-	public List<WUser> getWorkout(){
+	public List<WEntity> getWorkout(){
 		return mapper.findMany();
 	}
 }
