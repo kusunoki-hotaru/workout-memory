@@ -9,4 +9,12 @@ public interface WorkoutService {
 	public void addTraining(WEntity entity);
 	
 	public List<WEntity> getWorkout();
+	
+	public WEntity getWorkoutOne(String training);
+	
+	//更新
+	public void updateWorkoutOne(String training,String bodyParts);
+	
+	//削除
+	public void deleteWorkoutOne(String training);
 }

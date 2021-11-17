@@ -5,6 +5,13 @@
 <!-- Mapperとxmlのマッピンング -->
 <mapper namespace="com.example.repository.WorkoutMapper">
 
+<!-- マッピング定義 -->
+<resultMap type="com.example.domain.model.WEntity" id="trainingg">
+ <id column="training" property="training"/>
+ <result column="body_parts" property="bodyParts"/>
+</resultMap>
+
+
  <!-- ユーザー一件登録 -->
  <insert id="insertOne">
    insert into w_entity(
@@ -20,7 +27,7 @@
  </insert>
  
  
- <!-- ユーザー複数件取得 -->
+ <!--複数件取得 -->
  <select id="findMany" resultType="WEntity">
    select
      *
@@ -28,6 +35,37 @@
      w_entity
  
  </select>
+ 
+ <!-- 一件取得 -->
+ <select id="findOne" resultMap="trainingg">
+   select
+     *
+   from
+    w_entity
+   where
+    training=#{training}
+ </select>
+ 
+ <!-- ユーザー一件更新 -->
+ <update id="updateOne">
+    update
+      w_entity
+    set
+      training = #{training}
+     ,body_parts = #{bodyParts}
+    where
+      training = #{training}
+ </update>
+ 
+ <!-- ユーザー一件削除 -->
+ <delete id="deleteOne">
+     delete from
+       w_entity
+     where
+       training = #{training}
+ </delete>
+ 
+ 
 </mapper>
 
 

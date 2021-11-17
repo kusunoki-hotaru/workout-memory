@@ -27,4 +27,24 @@ public class WorkoutServiceImpl implements WorkoutService{
 	public List<WEntity> getWorkout(){
 		return mapper.findMany();
 	}
+	
+	/***/
+	@Override
+	public WEntity getWorkoutOne(String training) {
+		
+		return mapper.findOne(training);
+	}
+	
+	//一件更新
+	@Override
+	public void updateWorkoutOne(String training,String bodyParts) {
+		mapper.updateOne(training, bodyParts);
+	}
+	
+	//一件削除
+	@Override
+	public void deleteWorkoutOne(String training) {
+		int count = mapper.deleteOne(training);
+	}
+	
 }
