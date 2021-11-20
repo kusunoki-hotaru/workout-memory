@@ -9,4 +9,6 @@ public class WEntity {
 	private String training;
 	
 	private String bodyParts;
+	
+	private TrainingMethod wMemory;
 }

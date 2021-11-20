@@ -13,7 +13,7 @@ public interface WorkoutMapper {
 
 	public int insertOne(WEntity entity);
 	
-	public List<WEntity> findMany();
+	public List<WEntity> findMany(WEntity entity);
 	
 	public WEntity findOne(String training);
 	

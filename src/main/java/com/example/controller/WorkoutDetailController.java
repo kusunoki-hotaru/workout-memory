@@ -26,6 +26,7 @@ public class WorkoutDetailController {
 			                  @PathVariable("training")String training) {
 	
 		WEntity WE =workoutService.getWorkoutOne(training);
+		       
 		
 		WDForm = modelMapper.map(WE,WorkoutDetailForm.class);
 		

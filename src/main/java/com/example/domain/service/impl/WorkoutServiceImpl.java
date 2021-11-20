@@ -24,8 +24,8 @@ public class WorkoutServiceImpl implements WorkoutService{
 	
 	/**ユーザー取得*/
 	@Override
-	public List<WEntity> getWorkout(){
-		return mapper.findMany();
+	public List<WEntity> getWorkout(WEntity entity){
+		return mapper.findMany(entity);
 	}
 	
 	/***/

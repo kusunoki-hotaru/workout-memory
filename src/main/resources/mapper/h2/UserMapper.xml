@@ -6,9 +6,16 @@
 <mapper namespace="com.example.repository.WorkoutMapper">
 
 <!-- マッピング定義 -->
-<resultMap type="com.example.domain.model.WEntity" id="trainingg">
+<resultMap type="com.example.domain.model.WEntity" id="training">
  <id column="training" property="training"/>
  <result column="body_parts" property="bodyParts"/>
+ <association property="" resultMap="department"></association>
+</resultMap>
+
+<!-- マッピング定義 （所属)-->
+<resultMap type="com.example.domain.model.Department" id="department">
+ <id column="department_id" property="departmentId"/>
+ <result column="department_name" property="departmentName"/>
 </resultMap>
 
 
@@ -33,15 +40,24 @@
      *
    from
      w_entity
- 
+  <where>
+   <if test="training != null">
+     training like '%' || #{training} || '%'
+   </if>
+   <if test="bodyParts != null">
+     and body_parts like '%' || #{bodyParts} || '%'
+   </if>
+  </where>
  </select>
  
  <!-- 一件取得 -->
- <select id="findOne" resultMap="trainingg">
+ <select id="findOne" resultMap="training">
    select
      *
    from
     w_entity
+    left join w_department
+      on  = w_
    where
     training=#{training}
  </select>

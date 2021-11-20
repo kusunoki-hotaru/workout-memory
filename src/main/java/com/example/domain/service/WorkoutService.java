@@ -8,7 +8,7 @@ public interface WorkoutService {
 
 	public void addTraining(WEntity entity);
 	
-	public List<WEntity> getWorkout();
+	public List<WEntity> getWorkout(WEntity entity);
 	
 	public WEntity getWorkoutOne(String training);
 	

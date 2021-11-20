@@ -1,5 +1,7 @@
 package com.example.form;
 
+import com.example.domain.model.TrainingMethod;
+
 import lombok.Data;
 
 @Data
@@ -9,5 +11,5 @@ public class WorkoutDetailForm {
 	
 	private String bodyParts;
 	
-	
+	private TrainingMethod wMemory;
 }
