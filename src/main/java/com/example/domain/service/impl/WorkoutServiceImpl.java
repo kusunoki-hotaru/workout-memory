@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.domain.model.WEntity;
 import com.example.domain.service.WorkoutService;
@@ -35,13 +36,16 @@ public class WorkoutServiceImpl implements WorkoutService{
 		return mapper.findOne(training);
 	}
 	
-	//一件更新
+	//更新
+	@Transactional
 	@Override
 	public void updateWorkoutOne(String training,String bodyParts) {
 		mapper.updateOne(training, bodyParts);
+		
+		//int i=1/0;
 	}
 	
-	//一件削除
+	//削除
 	@Override
 	public void deleteWorkoutOne(String training) {
 		int count = mapper.deleteOne(training);

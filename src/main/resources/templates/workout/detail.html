@@ -27,6 +27,13 @@
       <td><input type="text" class="form-control" th:field="*{bodyParts}">
       </td>
      </tr>
+     <tr>
+      <th>器具</th>
+      <td>
+       <span th:if="*{tMethod != null}"
+             th:text="*{tMethod.trainingMethod}"></span>
+      </td>
+     </tr>
     </tbody>
    </table>
    <div class="text-center">
@@ -35,7 +42,30 @@
     <!-- 更新ボタン -->
     <button class="btn btn-primary" type="submit" name= "update">更新</button>
    </div>
+   <!-- 記録情報 -->
+    <th:block th:if="*{memoryList != null and memoryList.size()>0}">
+     <div class="header border-bottom">
+      <h1 class="h2">記録</h1>
+     </div>
+     <table class="table table-striped table-bordered table-hover">
+      <thead>
+       <tr>
+        <th class="w-25">重量</th>
+        <th>回数</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr th:each="item:*{memoryList}">
+        <td th:text="${item.weight}"></td>
+        <td th:text="${item.memory}"></td>
+       </tr>
+      </tbody>
+     </table>
+    </th:block>
   </form>
  </div>
 </body>
 </html>
+
+
+

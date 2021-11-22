@@ -9,14 +9,23 @@
 <resultMap type="com.example.domain.model.WEntity" id="training">
  <id column="training" property="training"/>
  <result column="body_parts" property="bodyParts"/>
- <association property="" resultMap="department"></association>
+ <association property="tMethod" resultMap="tMethod"></association>
+ <collection property="memoryList" resultMap="memory" columnPrefix="memory_"></collection>
 </resultMap>
 
-<!-- マッピング定義 （所属)-->
-<resultMap type="com.example.domain.model.Department" id="department">
- <id column="department_id" property="departmentId"/>
- <result column="department_name" property="departmentName"/>
+<!-- マッピング定義 （方法)-->
+<resultMap type="com.example.domain.model.TMethod" id="tMethod">
+ <id column="training" property="training"/>
+ <result column="training_method" property="trainingMethod"/>
 </resultMap>
+
+<!-- マッピング定義 （記録)-->
+<resultMap type="com.example.domain.model.Memory" id="memory">
+ <id column="training" property="training"/>
+ <id column="weight" property="weight"/>
+ <result column="memory" property="memory"/>
+</resultMap>
+
 
 
  <!-- ユーザー一件登録 -->
@@ -53,13 +62,24 @@
  <!-- 一件取得 -->
  <select id="findOne" resultMap="training">
    select
-     *
+     w_entity.training
+    ,w_entity.body_parts
+    ,t_method.training
+    ,t_method.training_method
+    ,memory.training as memory_training
+    ,memory.weight as memory_weight
+    ,memory.memory as memory_memory
    from
     w_entity
-    left join w_department
-      on  = w_
+    
+    left join t_method
+      on w_entity.training = t_method.training
+    
+    left join memory
+      on w_entity.training = memory.training
+      
    where
-    training=#{training}
+    w_entity.training=#{training}
  </select>
  
  <!-- ユーザー一件更新 -->

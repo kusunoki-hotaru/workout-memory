@@ -12,3 +12,17 @@ CREATE TABLE IF NOT EXISTS w_user(
   training VARCHAR(20) PRIMARY KEY
  ,body_parts VARCHAR(20)
  );
+ 
+ CREATE TABLE IF NOT EXISTS t_method(
+  training VARCHAR(20) PRIMARY KEY
+ ,training_method VARCHAR(20)
+ );
+ 
+ CREATE TABLE IF NOT EXISTS memory(
+  training VARCHAR(20) PRIMARY KEY
+ ,weight VARCHAR(20)
+ ,memory VARCHAR(20)
+ );
+ 
+ 
+ 

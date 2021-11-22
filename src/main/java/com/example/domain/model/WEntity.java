@@ -1,6 +1,8 @@
 package com.example.domain.model;
 
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -10,5 +12,7 @@ public class WEntity {
 	
 	private String bodyParts;
 	
-	private TrainingMethod wMemory;
+	private TMethod tMethod;
+	
+	private List<Memory> memoryList;
 }

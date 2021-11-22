@@ -1,6 +1,9 @@
 package com.example.form;
 
-import com.example.domain.model.TrainingMethod;
+import java.util.List;
+
+import com.example.domain.model.Memory;
+import com.example.domain.model.TMethod;
 
 import lombok.Data;
 
@@ -11,5 +14,7 @@ public class WorkoutDetailForm {
 	
 	private String bodyParts;
 	
-	private TrainingMethod wMemory;
+	private TMethod tMethod;
+	
+	private List<Memory> memoryList;
 }

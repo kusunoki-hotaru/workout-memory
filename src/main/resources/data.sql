@@ -16,3 +16,22 @@ INSERT INTO w_entity(
 ('ベンチプレス','胸'),
 ('スクワット','足'),
 ('チンニング','背中');
+
+
+INSERT INTO t_method(
+ training
+,training_method
+)VALUES
+('ベンチプレス','バーベル'),
+('スクワット','バーベル'),
+('チンニング','バー');
+
+
+INSERT INTO memory(
+ training
+,weight
+,memory
+)VALUES
+('ベンチプレス','50kg','10回'),
+('スクワット','50kg','10回'),
+('チンニング','自重','13回');

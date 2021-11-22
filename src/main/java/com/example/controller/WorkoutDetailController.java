@@ -12,7 +12,10 @@ import com.example.domain.model.WEntity;
 import com.example.domain.service.WorkoutService;
 import com.example.form.WorkoutDetailForm;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 public class WorkoutDetailController {
 
 	@Autowired
@@ -29,6 +32,7 @@ public class WorkoutDetailController {
 		       
 		
 		WDForm = modelMapper.map(WE,WorkoutDetailForm.class);
+		WDForm.setMemoryList(WE.getMemoryList());
 		
 		model.addAttribute("WDForm",WDForm);
 		
@@ -39,9 +43,12 @@ public class WorkoutDetailController {
 	@PostMapping(value ="/workoutDetail",params = "update")
 	public String updateWorkout(WorkoutDetailForm form,Model model) {
 		
+		try {
 		workoutService.updateWorkoutOne(form.getTraining(),
 				                        form.getBodyParts());
-		                       
+		}catch(Exception e) {
+			log.error("エラー",e);
+		}
 		return "redirect:/list";
 	}
 	
