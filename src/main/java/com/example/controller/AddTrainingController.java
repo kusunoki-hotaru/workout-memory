@@ -55,6 +55,8 @@ public class AddTrainingController {
 		
 			return "redirect:/list";
 		}
+	
+	
 	//データベース関連の例外処理
 	@ExceptionHandler(DataAccessException.class)
 	public String dataAccessExceptionHandler(DataAccessException e,Model model) {
@@ -63,7 +65,7 @@ public class AddTrainingController {
 		model.addAttribute("error","");
 		
 		//メッセージをModelに登録
-		model.addAttribute("message","addTrainingControllerで例外が発生しました");
+		model.addAttribute("message","AddTrainingControllerで例外が発生しました");
 		
 		//HTTPのエラーコード（５００）をModelに登録
 		model.addAttribute("status",HttpStatus.INTERNAL_SERVER_ERROR);
@@ -79,7 +81,7 @@ public class AddTrainingController {
 		model.addAttribute("error","");
 		
 		//メッセージをModelに登録
-		model.addAttribute("message","addTrainingControllerで例外が発生しました");
+		model.addAttribute("message","AaddTrainingControllerで例外が発生しました");
 		
 		//HTTPのエラーコード（５００）をModelに登録
 		model.addAttribute("status",HttpStatus.INTERNAL_SERVER_ERROR);
